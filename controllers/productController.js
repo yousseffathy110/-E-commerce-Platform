@@ -1,0 +1,1 @@
+// Manages product actions (listing, details)

@@ -1,0 +1,1 @@
+// Class for managing users (admin or customer) 

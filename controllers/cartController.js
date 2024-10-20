@@ -1,0 +1,1 @@
+// Manages cart actions (add/remove, view cart)
