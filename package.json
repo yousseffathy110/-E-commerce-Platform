@@ -1,0 +1,14 @@
+{
+  "name": "e-commerce-platform",
+  "version": "1.0.0",
+  "description": "This is a console-based e-commerce platform built using pure JavaScript and Node.js. The platform allows users to browse products, add items to their cart, and proceed to checkout. There is also an admin panel for managing the products in the inventory.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yousef fathy",
+  "license": "ISC",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
