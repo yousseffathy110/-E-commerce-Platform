@@ -15,7 +15,12 @@ function addToCart(productId) {
   }
 }
 
-function removeFromCart(productId) {
+function removeFromCart(productId) {  if (productInCart) {
+  cart.removeFromCart(productId);
+  console.log(`Product with ID ${productId} removed from your cart`);
+} else {
+  console.log(`Error: Product with ID ${productId} is not in the cart.`);
+}
   // Check if the product ID exists in the cart items array
   const productInCart = cart.items.find(item => item.id === productId);
   

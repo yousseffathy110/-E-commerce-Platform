@@ -3,8 +3,21 @@ const prompt = require('prompt-sync')({ sigint: true });
 
 function addProduct() {
   console.log("\n--- Add New Product ---");
-  
-  const id = parseInt(prompt("Enter Product ID: "), 10);
+
+  let id;
+  let existingProduct;
+
+  // Loop until a unique product ID is entered
+  do {
+    id = parseInt(prompt("Enter Product ID: "), 10);
+    existingProduct = products.find(product => product.id === id);
+
+    if (existingProduct) {
+      console.log(`Error: Product with ID ${id} already exists. Please enter a different ID.`);
+    }
+  } while (existingProduct); // Keep prompting if the ID already exists
+
+  // Proceed to ask for other product details
   const name = prompt("Enter Product Name: ");
   const description = prompt("Enter Product Description: ");
   const price = parseFloat(prompt("Enter Product Price: "));
@@ -12,23 +25,16 @@ function addProduct() {
 
   // Create a new product object
   const newProduct = {
-      id,
-      name,
-      description,
-      price,
-      stock
+    id,
+    name,
+    description,
+    price,
+    stock
   };
-
-  // Check if the product ID already exists
-  const existingProduct = products.find(product => product.id === id);
-  if (existingProduct) {
-      console.log(`Error: Product with ID ${id} already exists.`);
-      return;
-  }
 
   // Add the new product to the products array
   products.push(newProduct);
-  console.log(`Product ${name} added successfully!`);
+  console.log(`Product "${name}" added successfully!`);
 }
 function updateProduct() {
   const id = parseInt(prompt("Enter Product ID to update: "), 10);

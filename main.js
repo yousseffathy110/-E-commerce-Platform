@@ -11,7 +11,7 @@ const { addProduct } = require('./controllers/adminController');
 console.log("Welcome to the eCommerce platform!\n");
 
 let action;
-let isAdminLoggedIn = false; // Flag to check if admin is logged in
+let isAdminLoggedIn = true; // true for development purposes
 
 do {
   // Display main menu options
@@ -41,7 +41,7 @@ do {
       case '2':
           // Add product (only if admin is logged in)
           if (isAdminLoggedIn) {
-            
+
               // Call addProduct function
               addProduct();
  
